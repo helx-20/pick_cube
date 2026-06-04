@@ -109,7 +109,7 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--worker_id', type=int, default=0)
+    parser.add_argument('--worker_id', type=int, default=1)
     parser.add_argument('--env_id', type=str, default="PickCube-v1")
     parser.add_argument('--checkpoint', type=str, default='examples/baselines/ppo/runs/PickCube-v1__ppo__1__1780321332/final_ckpt.pt')
     parser.add_argument('--criticality_ckpt', type=str, default=None)
@@ -125,6 +125,7 @@ if __name__ == '__main__':
     parser.add_argument("--sim_backend", type=str, default="physx_cpu")
     parser.add_argument('--nade', action='store_true', default=False)
     parser.add_argument('--criticality_threshold', type=float, default=0.1, help="Threshold for applying disturbance in NADE")
+    parser.add_argument('--weight_threshold', type=float, default=0.2, help="Threshold for counting a crash in weighted metrics")
     parser.add_argument('--save_video_dir', type=str, default='criticality/test/videos_new')
     parser.add_argument('--ignore_terminations', type=bool, default=True)
     
